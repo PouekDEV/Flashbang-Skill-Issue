@@ -1,0 +1,5 @@
+<sounds root="sfx/">
+	<sound name="FLASH_BANG">
+		<sample weight="1" path="flashbang.wav" />
+	</sound>
+</sounds>
