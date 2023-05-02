@@ -8,9 +8,10 @@ mod.BANG_SOUND = Isaac.GetSoundIdByName("FLASH_BANG")
 mod.wait = false
 mod.switch = false
 mod.is_flashed = false
+mod.initialized = false
 mod.current_frame = 0
 mod.target_frame = 0
-mod.time = 1
+mod.time = 0
 
 -- Copied from Hit tracker mod
 -- Identificaiton of special damage types, referenced from Rep+ code
@@ -60,7 +61,7 @@ end
 function mod:PostPlayerInit()
 	mod.wait = false
 	mod.switch = false
-	mod.is_flashed = false
+	mod.is_flashed = true
 	mod.current_frame = 0
 	mod.target_frame = 0
 	mod.time = 1
@@ -83,7 +84,7 @@ function mod:PostRender()
 			mod.time = 100
 		end
 	end
-	if mod.is_flashed and mod.time > 0 then
+	if mod.is_flashed and mod.time > -1 then
 		mod.time = mod.time - 1
 	end
 	if mod.is_flashed and mod.time < 0 then
